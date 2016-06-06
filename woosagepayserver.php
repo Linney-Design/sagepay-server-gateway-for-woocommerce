@@ -39,7 +39,7 @@ function init_woocommerce_sagepayserver()
             $this->method_title = __('SagePay Server', 'patsatech-woo-sagepay-server');
             $this->icon = apply_filters('woocommerce_sagepayserver_icon', '');
             $this->has_fields = false;
-            $this->notify_url = str_replace('https:', 'http:', add_query_arg('wc-api', 'woocommerce_sagepayserver', home_url('/')));
+            $this->notify_url = str_replace('https:', 'http:', add_query_arg('wc-api', 'woocommerce_sagepayserver', apply_filters( 'woocommerce_sagepayserver_notify_url', home_url( '/' ))));
 
             $default_card_type_options = array(
                 'VISA' => 'VISA',
