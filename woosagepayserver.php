@@ -339,7 +339,7 @@ function init_woocommerce_sagepayserver()
             }
 
             $sd_arg['Description'] = sprintf(__('Order #%s', 'woothemes'), $order->id);
-            $sd_arg['Currency'] = get_option('woocommerce_currency');
+            $sd_arg['Currency'] = add_filter('woocommerce_currency' , get_option('woocommerce_currency'), $order);
             $sd_arg['VPSProtocol'] = 3.00;
             $sd_arg['Vendor'] = $this->vendor_name;
             $sd_arg['TxType'] = $this->transtype;
