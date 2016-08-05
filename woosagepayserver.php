@@ -118,7 +118,7 @@ function init_woocommerce_sagepayserver()
          */
         function is_valid_for_use()
         {
-            if (!in_array(get_option('woocommerce_currency'), array('USD', 'AUD', 'CAD', 'CHF', 'DKK', 'EUR', 'GBP', 'HKD', 'IDR', 'JPY', 'LUF', 'NOK', 'NZD', 'SEK', 'SGD', 'TRL'))) return false;
+            if (!in_array(add_filter('woocommerce_currency' , get_option('woocommerce_currency')), array('USD', 'AUD', 'CAD', 'CHF', 'DKK', 'EUR', 'GBP', 'HKD', 'IDR', 'JPY', 'LUF', 'NOK', 'NZD', 'SEK', 'SGD', 'TRL'))) return false;
 
             return true;
         }
