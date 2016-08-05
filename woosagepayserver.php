@@ -66,7 +66,7 @@ function init_woocommerce_sagepayserver()
             $this->transtype = $this->settings['transtype'];
             $this->paymentpage = $this->settings['paymentpage'];
             $this->iframe = $this->settings['iframe'];
-            $this->currency = $this->settings['currency'];
+            $this->currency = add_filter('woocommerce_currency' , get_option('woocommerce_currency'));
             $this->cardtypes = $this->settings['cardtypes'];
             $this->woo_version = $this->get_woo_version();
 
