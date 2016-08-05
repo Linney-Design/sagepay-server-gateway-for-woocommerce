@@ -66,7 +66,7 @@ function init_woocommerce_sagepayserver()
             $this->transtype = $this->settings['transtype'];
             $this->paymentpage = $this->settings['paymentpage'];
             $this->iframe = $this->settings['iframe'];
-            $this->currency = add_filter('woocommerce_currency' , get_option('woocommerce_currency'));
+            $this->currency = apply_filters('woocommerce_currency' , get_option('woocommerce_currency'));
             $this->cardtypes = $this->settings['cardtypes'];
             $this->woo_version = $this->get_woo_version();
 
@@ -118,7 +118,7 @@ function init_woocommerce_sagepayserver()
          */
         function is_valid_for_use()
         {
-            if (!in_array(add_filter('woocommerce_currency' , get_option('woocommerce_currency')), array('USD', 'AUD', 'CAD', 'CHF', 'DKK', 'EUR', 'GBP', 'HKD', 'IDR', 'JPY', 'LUF', 'NOK', 'NZD', 'SEK', 'SGD', 'TRL'))) return false;
+            if (!in_array(apply_filters('woocommerce_currency' , get_option('woocommerce_currency')), array('USD', 'AUD', 'CAD', 'CHF', 'DKK', 'EUR', 'GBP', 'HKD', 'IDR', 'JPY', 'LUF', 'NOK', 'NZD', 'SEK', 'SGD', 'TRL'))) return false;
 
             return true;
         }
@@ -339,7 +339,7 @@ function init_woocommerce_sagepayserver()
             }
 
             $sd_arg['Description'] = sprintf(__('Order #%s', 'woothemes'), $order->id);
-            $sd_arg['Currency'] = add_filter('woocommerce_currency' , get_option('woocommerce_currency'), $order);
+            $sd_arg['Currency'] = apply_filters('woocommerce_currency' , get_option('woocommerce_currency'), $order);
             $sd_arg['VPSProtocol'] = 3.00;
             $sd_arg['Vendor'] = $this->vendor_name;
             $sd_arg['TxType'] = $this->transtype;
