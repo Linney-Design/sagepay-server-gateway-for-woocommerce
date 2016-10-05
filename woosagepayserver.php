@@ -8,7 +8,7 @@
  * Author URI: http://www.patsatech.com
  * Contributors: patsatech
  * Requires at least: 3.5
- * Tested up to: 4.1
+ * Tested up to: 4.6.1
  *
  * Text Domain: patsatech-woo-sagepay-server
  * Domain Path: /lang/
@@ -39,7 +39,8 @@ function init_woocommerce_sagepayserver()
             $this->method_title = __('SagePay Server', 'patsatech-woo-sagepay-server');
             $this->icon = apply_filters('woocommerce_sagepayserver_icon', '');
             $this->has_fields = false;
-            $this->notify_url = str_replace('https:', 'http:', add_query_arg('wc-api', 'woocommerce_sagepayserver', apply_filters( 'woocommerce_sagepayserver_notify_url', home_url( '/' ))));
+            $this->notify_url = add_query_arg('wc-api', 'woocommerce_sagepayserver', apply_filters( 'woocommerce_sagepayserver_notify_url', home_url( '/' )));
+            $this->notify_url = ($_SERVER['SERVER_PORT'] == "80") ? str_replace('https:', 'http:', $this->notify_url) : $this->notify_url;
 
             $default_card_type_options = array(
                 'VISA' => 'VISA',
