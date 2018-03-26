@@ -3,7 +3,7 @@ Contributors: patsatech
 Tags: ecommerce, payment gateway, wordpress, woocommerce,sagepay server,sagepay go
 Requires at least: 3.5
 Tested up to: 3.8
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 
 SagePay Server Gateway for accepting payments on your WooCommerce Store.
@@ -20,9 +20,8 @@ Send us your ideas and feedback here: https://www.patsatech.com/contact-us
 == Installation ==
 
 1. Download and unzip the latest release zip file.
-2. If you use the WordPress plugin uploader to install this plugin skip to step 4.
-3. Upload the entire plugin directory to your `/wp-content/plugins/` directory.
-4. Activate the plugin through the 'Plugins' menu in WordPress Administration.
+2. Upload the entire plugin directory to your `/wp-content/plugins/` directory.
+3. Activate the plugin through the 'Plugins' menu in WordPress Administration.
 
 == Changelog ==
 
@@ -34,3 +33,10 @@ Send us your ideas and feedback here: https://www.patsatech.com/contact-us
 
 = 1.0.2 =
 * Updated the plugin to support WooCommerce 2.3.x
+
+= 1.0.7 =
+* Amends to security *
+* Update to support multiple currencies by fethcing the currency option *
+
+= 1.0.8 =
+* documented changes *

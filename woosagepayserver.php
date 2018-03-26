@@ -3,10 +3,10 @@
  * Plugin Name: SagePay Server Gateway for WooCommerce
  * Plugin URI: http://www.patsatech.com/
  * Description: WooCommerce Plugin for accepting payment through SagePay Server Gateway.
- * Version: 1.0.7
- * Author: PatSaTECH
- * Author URI: http://www.patsatech.com
- * Contributors: patsatech
+ * Version: 1.0.8
+ * Author: Aesopagency (forked from PatSaTECH)
+ * Author URI: http://aesopagency.com (http://www.patsatech.com)
+ * Contributors: aesopagency, patsatech
  * Requires at least: 3.5
  * Tested up to: 4.6.1
  *
@@ -14,7 +14,7 @@
  * Domain Path: /lang/
  *
  * @package SagePay Server Gateway for WooCommerce
- * @author PatSaTECH
+ * @author Aesopagency
  */
 
 add_action('plugins_loaded', 'init_woocommerce_sagepayserver', 0);
