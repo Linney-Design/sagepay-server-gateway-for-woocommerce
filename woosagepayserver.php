@@ -244,7 +244,7 @@ function init_woocommerce_sagepayserver()
 
             if ($this->iframe == 'yes') {
 
-                return '<iframe src="' . esc_url(get_transient('sagepay_server_next_url')) . '" name="sagepayserver_payment_form" width="100%" height="900px" ></iframe>';
+                return '<iframe src="' . esc_url(get_transient('sagepay_server_next_url' . $order_id)) . '" name="sagepayserver_payment_form" width="100%" height="900px" ></iframe>';
 
             } else {
 
@@ -269,7 +269,7 @@ function init_woocommerce_sagepayserver()
 					jQuery("#submit_sagepayserver_payment_form").click();
 				');
 
-                return '<form action="' . esc_url(get_transient('sagepay_server_next_url')) . '" method="post" id="sagepayserver_payment_form">
+                return '<form action="' . esc_url(get_transient('sagepay_server_next_url' . $order_id)) . '" method="post" id="sagepayserver_payment_form">
 						<input type="submit" class="button alt" id="submit_sagepayserver_payment_form" value="' . __('Submit', 'woothemes') . '" /> <a class="button cancel" href="' . esc_url($order->get_cancel_order_url()) . '">' . __('Cancel order &amp; restore cart', 'woothemes') . '</a>
 					</form>';
 
@@ -400,7 +400,7 @@ function init_woocommerce_sagepayserver()
 
                     $order->add_order_note($resp['StatusDetail']);
 
-                    set_transient('sagepay_server_next_url', $resp['NextURL']);
+                    set_transient('sagepay_server_next_url' . $order_id, $resp['NextURL']);
 
                     if ($this->woo_version >= 2.1) {
                         $redirect = $order->get_checkout_payment_url(true);
